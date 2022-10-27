@@ -3,19 +3,24 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
+  const jsConfetti = new JSConfetti();
   var hornSelect = document.getElementById("horn-select");
   var audio = document.getElementsByTagName("audio")[0];
+  var button = document.getElementsByTagName("button")[0]
 
   hornSelect.onchange = function () {
-    if (hornSelect.value != 'select') {
+    if (hornSelect.value != "select") {
       console.log("Changing value");
       document.getElementsByTagName("img")[0].src = `assets/images/${hornSelect.value}.svg`;
       audio.src = `assets/audio/${hornSelect.value}.mp3`;
     }
   }
 
-  document.getElementsByTagName("button")[0].onclick = function () {
+  button.onclick = function () {
     audio.play();
+    if (hornSelect.value === "party-horn") {
+      jsConfetti.addConfetti();
+    }
   }
 
   volume.onchange = function () {
@@ -24,7 +29,7 @@ function init() {
     let img = volumeControls.getElementsByTagName("img")[0];
     let value = Number(volume.value);
 
-    audio.volume = value/100;
+    audio.volume = value / 100;
 
     if (value === 0) {
       img.src = `assets/icons/volume-level-${volume.value}.svg`;

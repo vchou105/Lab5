@@ -10,9 +10,7 @@ function init() {
     if (hornSelect.value != 'select') {
       console.log("Changing value");
       document.getElementsByTagName("img")[0].src=`assets/images/${hornSelect.value}.svg`;
+      document.getElementsByTagName("audio")[0].src=`assets/audio/${hornSelect.value}.mp3`;
     }
-    
   }
-  // var selectedHorn = document.getElementById("horn-select").value;
-
 }

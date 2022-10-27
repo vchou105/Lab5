@@ -3,7 +3,6 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  // TODO
   var hornSelect = document.getElementById("horn-select");
   var audio = document.getElementsByTagName("audio")[0];
 
@@ -24,6 +23,8 @@ function init() {
     let volumeControls = document.getElementById("volume-controls");
     let img = volumeControls.getElementsByTagName("img")[0];
     let value = Number(volume.value);
+
+    audio.volume = value/100;
 
     if (value === 0) {
       img.src = `assets/icons/volume-level-${volume.value}.svg`;

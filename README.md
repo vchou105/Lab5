@@ -1,5 +1,5 @@
 # Lab 5
-Team members: Melvyn Tan, Vicky Chou
+Team members: Melvyn Nam Qiang Tan, Vicky Chou
 
 [Expose](https://vchou105.github.io/Lab5/expose.html)
 [Explore](https://vchou105.github.io/Lab5/explore.html)

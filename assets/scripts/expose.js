@@ -16,6 +16,7 @@ function init() {
   }
 
   button.onclick = function () {
+    audio.load();
     if (hornSelect.value !== "select") {
       audio.play();
     }

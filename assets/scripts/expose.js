@@ -9,15 +9,16 @@ function init() {
   var button = document.getElementsByTagName("button")[0]
 
   hornSelect.onchange = function () {
-    if (hornSelect.value != "select") {
-      console.log("Changing value");
+    if (hornSelect.value !== "select") {
       document.getElementsByTagName("img")[0].src = `assets/images/${hornSelect.value}.svg`;
       audio.src = `assets/audio/${hornSelect.value}.mp3`;
     }
   }
 
   button.onclick = function () {
-    audio.play();
+    if (hornSelect.value !== "select") {
+      audio.play();
+    }
     if (hornSelect.value === "party-horn") {
       jsConfetti.addConfetti();
     }

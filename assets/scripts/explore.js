@@ -3,12 +3,6 @@
 window.addEventListener('DOMContentLoaded', init);
 
 function init() {
-  const inputForm = document.querySelector('form');
-  const inputTxt = document.querySelector('.txt');
-  const pitch = document.querySelector('#pitch');
-  const pitchValue = document.querySelector('.pitch-value');
-  const rate = document.querySelector('#rate');
-  const rateValue = document.querySelector('.rate-value');
   let voices = [];
   const synth = window.speechSynthesis;
   const voiceSelect = document.getElementById('voice-select');
@@ -41,7 +35,7 @@ function init() {
 
   const myButton = document.getElementsByTagName("button")[0];
 
-  myButton.addEventListener('click' , (event) => {
+  myButton.addEventListener('click' , () => {
     const myText = document.getElementById("text-to-speak");
 
     const utterThis = new SpeechSynthesisUtterance(myText.value);
@@ -52,18 +46,15 @@ function init() {
       }
     }
      synth.speak(utterThis);
-     console.log(synth.speaking);
 
     let myImage = document.getElementsByTagName('img')[0];
 
     let myInterval = setInterval (function() {
       let speaking = synth.speaking;
-      console.log("inside");
       if (speaking) {
         myImage.src="assets/images/smiling-open.png";
       }
       else {
-        console.log("else");
         myImage.src="assets/images/smiling.png";
         clearInterval(myInterval);
       }
